@@ -4,19 +4,19 @@ module Ckeditor
       module AssetBase
         module InstanceMethods
           def filename
-            data_file_name
+            image_file_name
           end
 
           def size
-            data_file_size
+            image_file_size
           end
-          
+
           def has_dimensions?
             respond_to?(:width) && respond_to?(:height)
           end
-          
+
           def image?
-            Ckeditor::IMAGE_TYPES.include?(data_content_type)
+            Ckeditor::IMAGE_TYPES.include?(image_content_type)
           end
 
           def format_created_at
@@ -30,7 +30,7 @@ module Ckeditor
           def url_thumb
             url(:thumb)
           end
-          
+
           def as_json_methods
             [:url_content, :url_thumb, :size, :filename, :format_created_at]
           end

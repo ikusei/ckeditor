@@ -31,7 +31,7 @@ module Ckeditor
               field :width, :type => Integer
               field :height, :type => Integer
 
-              belongs_to :assetable, :polymorphic => true
+              belongs_to :attachable, :polymorphic => true
             end
           end
         end
